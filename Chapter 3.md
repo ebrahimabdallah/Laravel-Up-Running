@@ -1,5 +1,5 @@
 # Chapter 3
- * Mvc You Have Three Primary Concepts :
+ * Mvc Three Primary Concepts :
 1) Model
  * Repersents an individual database table 
 2) Controller 
