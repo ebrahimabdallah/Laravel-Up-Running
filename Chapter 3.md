@@ -146,7 +146,7 @@ your application
 php artisan make:controller NameContoller 
 ```
 * **Artisan** can be used to run migrations, create users and other
-database records manually, and perform many other manual, onetime tasks
+database records manually, and perform many other manual, one time tasks
 
 * request() helper to represent the HTTP request
 * only() method allows you to retrieve only the specified keys from the request's
