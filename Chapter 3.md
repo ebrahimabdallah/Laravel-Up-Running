@@ -166,8 +166,7 @@ public function __construct(Logger $logger)
 when a controller should only service a single
 route
 * Using the __invoke() method
-allows you to “invoke” an instance of a class,
-
+ 
 ```
 public function __invoke(User $user)
 {
