@@ -232,8 +232,7 @@ php artisan route:chace
 * Cross Site Request forgey
 * Protection is an important security feature provided by Laravel to prevent unauthorized requests from being processed by your application
 * using in all routes in Laravel except **"read-only"** routes 
-* You have two options
-```
+ ```
 <form action="/tasks/5" method="POST">
  <?php echo csrf_field(); ?>
  <!-- or: -->
