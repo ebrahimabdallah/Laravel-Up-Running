@@ -15,7 +15,7 @@
 4) Put==>overwrite a resourse 
 5) Put==>Modify a resourse  
 6) delete==>delete
-7) options==> ask server which verbd are allowed at this url
+7) options==> ask server which verbs are allowed at this url
 
 * A Clouser is type of anonymous function that you can pass around an object ,assign to a varaible,pass a parameter to other function a method or even serialize 
 
