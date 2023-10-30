@@ -37,7 +37,6 @@ Route::get('/', function () {
 * Work with predictable URL structures using HTTP verbs.
 * Returns a JSON response
 _________________________________
-
 * you can create a route simple && optional parameter used question mark ? && you can use regular exprssions(regexes) 
  
 * Route parameters
@@ -131,6 +130,23 @@ route("members.show", ["id" => 10])
 * It is used to limit a user to access the page for specified number of times
 ```
 * Route->middleware("auth:api", "throttle:60,1")->group()
+```
+
+# MiddleWare
+* authenticating users and restricting guest users from
+ using certain parts of a site
+*  You can use "except" and "only" to specify the method which will recieve the middleware
+*
+```
+Route::middleware('auth')->group(function() {
+ Route::get('dashboard', function () {
+ return view('dashboard');
+ });
+ Route::get('account', function () {
+ return view('account');
+ });
+});
+
 ```
 _______________________________________
 # View
@@ -299,3 +315,13 @@ Assert that a table in the database contains the given number of records
 * **assertDatabaseHas** Assert that a table in the database contains records matching the given key or value query constraints
 * **assertDatabaseMissing**
 Assert that a table in the database does not contain records matching the given key or value query constraints
+# Custom Responses
+* response()->make()
+* response()->json() and ->jsonp()
+* response()->download(), ->streamDownload(), and ->file()
+  ```
+return response()->streamDownload(function () {
+ echo DocumentService::file('myFile')->getContent();
+}, 'myFile.pdf');
+
+  ```
