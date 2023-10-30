@@ -32,7 +32,7 @@ Route::get('/', function () {
 
 ```
 * **REST**
-
+* architectural style commonly used in web development for building APIs
 * Focuses on one resource at a time
 * Work with predictable URL structures using HTTP verbs.
 * Returns a JSON response
