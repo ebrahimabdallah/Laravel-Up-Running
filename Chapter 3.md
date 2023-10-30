@@ -132,7 +132,7 @@ route("members.show", ["id" => 10])
 * Route->middleware("auth:api", "throttle:60,1")->group()
 ```
 
-# MiddleWare
+# Middleware
 * authenticating users and restricting guest users from
  using certain parts of a site
 *  You can use "except" and "only" to specify the method which will recieve the middleware
