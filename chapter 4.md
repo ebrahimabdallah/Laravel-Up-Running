@@ -10,9 +10,11 @@
  
 # Echo 
 * In Blade templates in Laravel, you can use the {{ }} or {!! !!} syntax to output content to the HTML page
-
-* **Control Structure**: Blade templates provide control structures that are similar to PHP, making them familiar to developers. 
-# Conditionals 
+*  skip echo with @
+*  
+# Control Structure
+* Blade templates provide control structures that are similar to PHP, making them familiar to developers. 
+* Conditionals 
 ```
 @if (Condition)
  // print any result
@@ -20,7 +22,7 @@
 //
 @end if 
 ```
-# Loop 
+* Loop 
 
 * Forelse is a Foreach that allows you a program in afallback if the object you're iterating over is empty 
 
