@@ -311,3 +311,88 @@ Route::get('backend/sales', function (AnalyticsService $analytics) {
  {{ $analytics->getBalance() }} / {{ $analytics->getBudget() }}
 </div>
 ```
+_______________________________________
+# Custom Blade Directives
+
+* useful when they simplify some form of
+repeated logic
+
+```
+public function boot()
+{
+ Blade::directive('ifGuest', function () {
+ return "<?php //command?>";
+ });
+}
+
+```
+* Write a condition in one place and use it in any part
+
+* Custom Directive Result Caching
+```
+// AppserviceProvider.php 
+
+
+public function boot():void
+{
+Blade::directive('ٍslugify', function () {
+ $slug = strtolower($text);
+
+  #slug =str_replace("","-",$slug);
+
+   return slug ;
+
+});
+}
+```
+* in web route
+```
+* create a clouser route
+
+Route::get("cutom-directive",functio(){
+ return view('user');
+
+});
+```
+* in view user
+```
+@slugify("Ebrahim Reda Abdallah")
+```
+ * out_put
+  
+```
+ebrahim reda abdallah 
+```
+
+
+
+
+* The problem with this idea is that it assumes this directive will be
+recreated on every page load. However, Blade caches aggressively,
+so you’re going to find yourself in a bad spot if you try this.
+
+* Parameters in Custom Blade Directives
+
+```
+// Binding
+Blade::directive('newlinesToBr', function ($expression) {
+ return "<?php echo //command ?>";
+});
+
+// In use
+<p>@newlinesToBr($message->body)</p>
+
+```
+* Easier way to create custom if directive
+
+```
+Blade::if('ifPublic', function () {
+ return (app('context'))->isPublic();
+});
+```
+
+# The End Chapter 4
+* laravel up running
+* Ebrahim reda
+* backend developer
+  
