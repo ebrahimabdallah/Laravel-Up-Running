@@ -22,10 +22,8 @@
 //
 @end if 
 ```
-* Loop 
 
-* Forelse is a Foreach that allows you a program in afallback if the object you're iterating over is empty 
-
+* **Loop** 
 ```
 @foreach($users as $user)
 {{$user->name}}
@@ -70,7 +68,6 @@
 
 ```
 * parent page 
-
 
 <!DOCTYPE html>
 <html>
