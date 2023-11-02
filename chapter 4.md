@@ -32,7 +32,7 @@
 @endforeach
 
 @while($user =array_pop($users)
-{{$user->orSomethine()}}
+{{$user->orSomething()}}
 @endwhile
 ```
 * when used within a foreach or forelse this variable will return a std Class object with these properties 
