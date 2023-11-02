@@ -11,7 +11,7 @@
 # Echo 
 * In Blade templates in Laravel, you can use the {{ }} or {!! !!} syntax to output content to the HTML page
 *  skip echo with @
-*  
+  
 # Control Structure
 * Blade templates provide control structures that are similar to PHP, making them familiar to developers. 
 * Conditionals 
