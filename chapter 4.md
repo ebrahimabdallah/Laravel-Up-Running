@@ -11,10 +11,7 @@
 # Echo 
 * In Blade templates in Laravel, you can use the {{ }} or {!! !!} syntax to output content to the HTML page
 
-* **Control Structrue** 
- * Most control structure in blade will be vert familiar 
- * Many directly echo the name and structure of the same tag in Php 
- 
+* **Control Structure**: Blade templates provide control structures that are similar to PHP, making them familiar to developers. 
 # Conditionals 
 ```
 @if (Condition)
