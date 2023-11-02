@@ -1,5 +1,5 @@
 
-# Why Blade 
+# Why Use  Blade 
 
 * Blade offers several advantages that make it a preferred choice for building web applications
 1) Clean and Readable Syntax
@@ -360,27 +360,17 @@ Route::get("cutom-directive",functio(){
 ebrahim reda abdallah 
 ```
 
-
-
-
-* The problem with this idea is that it assumes this directive will be
-recreated on every page load. However, Blade caches aggressively,
-so you’re going to find yourself in a bad spot if you try this.
-
 * Parameters in Custom Blade Directives
-
 ```
 // Binding
 Blade::directive('newlinesToBr', function ($expression) {
- return "<?php echo //command ?>";
+ return "<?php echo nl2br({$expression}); ?>";
 });
-
 // In use
 <p>@newlinesToBr($message->body)</p>
 
 ```
 * Easier way to create custom if directive
-
 ```
 Blade::if('ifPublic', function () {
  return (app('context'))->isPublic();
@@ -388,7 +378,7 @@ Blade::if('ifPublic', function () {
 ```
 
 # The End Chapter 4
-* laravel up running
-* Ebrahim reda
-* backend developer
+* Laravel Up Running
+* Ebrahim Reda
+* Backend Developer
   
