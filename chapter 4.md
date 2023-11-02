@@ -361,7 +361,7 @@ Route::get("cutom-directive",functio(){
  * out_put
   
 ```
-ebrahim reda abdallah 
+ebrahim-reda-abdallah 
 ```
 
 * Parameters in Custom Blade Directives
