@@ -131,3 +131,183 @@ directive in Blade templates promotes maintainability, reusability, and consiste
 @includeFirst(['customs.header', 'header'], ['some' => 'data'])
 
 ```
+* @each  directive allows you to iterate over a collection and render a Blade view for each item in the collection
+
+```
+<div class="sidebar">
+ @each('partials.module', $modules, 'module', 'partials.empty-module')
+</div>
+
+
+<div class="sidebar-module">
+ <h1>{{ $module->title }}</h1>
+</div>
+
+
+<div class="sidebar-module">
+ No modules :(
+</div>
+
+
+```
+# Stack 
+* **Why**
+*  can utilize stacks to manage CSS and JavaScript files for different sections or pages of your website without replacing the others
+
+```
+//push somethings to bottom of stack
+@push('scripts')
+//
+@endpush
+
+//push somethings to top of stack
+@prepend 
+//
+@endprepend
+```
+
+Components and slots provide similar benefits to sections, layouts, and includes; however, some may find the mental model of components and slots easier to understand
+
+```
+php artisan make:component Alert
+
+php artisan make:component Forms/Input
+```
+default slot is convenient for creating flexible and reusable components
+multiple named slots in a component if you need to insert content into different areas of the component's view.
+
+```
+@slot('title')
+ Password validation failure
+ @endslot
+```
+
+# Aliasing a component to be a directive
+
+can use to make your components even easier to call
+```
+Blade::component('partials.modal', 'modal');
+ partials.modal=>the location of the component 
+ model=>name of your desired directive
+```
+
+
+# Binding Data to Views Using View Composers
+
+* Problem ? 
+find yourself using a header partial or something similar that requires some data multiple
+will you have to pass that data in from every
+route definition that might ever load that header partial?
+
+* Solution : **view composer**
+
+* it allows
+you to define that any time a particular view loads, it should have certain data passed
+to it—without the route definition having to pass that data in explicitly
+
+```
+* Passing sidebar data in from every route
+
+Route::get('home', function () {
+ return view('home')
+ ->with('posts', Post::recent());
+});
+
+Route::get('about', function () {
+ return view('about')
+ ->with('posts', Post::recent());
+});
+
+```
+
+* **LooK**
+* If you find yourself repeatedly passing the same data to multiple views in your application, using view composers or view creators will help you centralize this process and make your code more maintainable.
+
+* Sharing a variable globally
+
+* Steps 
+1) Create a custom ViewComposerServiceProvider
+2) Using view()->share() makes the variable accessible to every view
+```
+public function boot()
+{
+ ...
+ view()->share('recentPosts', Post::recent());
+}
+
+* in view
+
+<ul>
+    @foreach ($recentPosts as $post)
+        <li>{{ $post->title }}</li>
+    @endforeach
+</ul>
+
+```
+* **View-scoped view composers with closures**
+
+* you can create a view composer with a closure to provide data to a specific view, rather than globally. 
+* View scoped composers are useful when you only need to bind data to a single view or a limited set of views. 
+```
+
+    View::composer('myview', function ($view) {
+        $view->with('customData', Post::recent());
+    });
+
+
+```
+
+* **View-scoped view composers with classes**
+
+* most flexible but also most complex option is to create a dedicated class
+for your view composer
+
+```
+class ProfileComposer
+{
+    public function compose(View $view): void
+    {
+        $view->with('count', $this->users->count());
+    }
+}
+
+```
+* Attaching A Composer To Multiple Views
+```
+View::composer(
+    ['profile', 'dashboard'],
+    MultiComposer::class
+);
+
+```
+
+# Blade Service Injection
+
+* feature in Laravel that allows you to directly inject a service or a dependency into a Blade view without the need to resolve it explicitly in your view or controller
+
+* first parameter of inject is the name of the variable you’re injecting, and
+the second parameter is the class or interface that you want to inject an instance of.
+
+
+```
+*  direct in view 
+
+@inject('userRepository', 'App\Repositories\UserRepository')
+
+<ul>
+    @foreach ($userRepository->getAllUsers() as $user)
+        <li>{{ $user->name }}</li>
+    @endforeach
+</ul>
+_______________________________
+* route && view
+Route::get('backend/sales', function (AnalyticsService $analytics) {
+ return view('backend.sales-graphs')
+ ->with('analytics', $analytics);
+});
+
+
+<div class="finances-display">
+ {{ $analytics->getBalance() }} / {{ $analytics->getBudget() }}
+</div>
+```
