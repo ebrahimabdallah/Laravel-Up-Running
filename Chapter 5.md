@@ -178,6 +178,7 @@ $user=factory(User::class)->create
 factory(User::class,20)->create 
 ```
 * function 
+
 ````
 public function definition(): array
     {
@@ -190,7 +191,7 @@ public function definition(): array
         ];
     }
 ```
-
+* make more sense once we cover relationships in Eloquent
 ```
 factory(User::class, 20)->create()->each(function ($u) use ($post) {
  $post->comments()->save(factory(Comment::class)->make([
