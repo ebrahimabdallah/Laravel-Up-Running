@@ -1,5 +1,5 @@
 # Migrations
- single file that defibes teo things [up && Down ]
+* migration is a single file that defines two things: [up && Down ]
  
 - migrations are always run in order by date
 
