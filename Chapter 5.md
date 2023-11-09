@@ -115,7 +115,7 @@ Rolls back just the migrations that ran the last time you ran migrate
 
 * migrate:status
 Shows a table listing every migration
-
+______________________________________________________________________________________________________________
 # Seeding 
  * tool for initializing your database with sample data, which is particularly useful during development, testing, or setting up default data in your application.
 
@@ -159,7 +159,7 @@ DB::table('name')->insert([
 
 }
 ```
-
+____________________________________________________________________________
 # Factories
 
 * patterns for creating fake entries for your data‐
@@ -179,7 +179,7 @@ factory(User::class,20)->create
 ```
 * function 
 
-````
+```
 public function definition(): array
     {
         return [
@@ -200,3 +200,80 @@ factory(User::class, 20)->create()->each(function ($u) use ($post) {
 });
 
 ```
+___________________________________________________________________
+# Query Builder 
+
+* tool for constructing SQL queries in a programmatic and fluent way. The Query Builder provides a simple, convenient way to interact with your database.
+
+* Fluent Vs. Non Fluent 
+
+* Fluent
+```
+$user=User::where('status','active')->orderBy('name','asc')->()get()
+```
+* Non-Fluent
+
+```
+$query=User::query()
+$query->where('status','active');
+$query->orderBy('name','asc');
+$user=$query->()get()
+```
+______________________________________________________________
+# Constraining method 
+
+Ex:-
+
+- Where ()
+- Select()
+- orWhere()
+- whereIn()
+- Limit()
+- groupBy()
+- whereExists()
+- whereNull()
+- whereRow()
+- orderBy()
+- havingRow() //filter result 
+- skip() // typically used for pagination or limiting the number of results returned
+- inRandomOrder() // sort result random 
+
+
+______________________________________________________________
+# Consitional Method
+
+- when() //method adds a constraint to the query based on a condition 
+- unless() //opposite When()
+
+______________________________________________________________
+# Endinf/Returning method
+
+- first()
+- get()
+- finOrFail()
+- value()
+- count()
+- min() && max()
+- sum() && avg
+
+______________________________________________________________
+# join 
+
+- inner join()
+- Left join()
+
+______________________________________________________________
+* unions
+
+* is used to combine the results of two or more queries into a single result set
+* can use union or unionAll()
+```
+$firstQuery = DB::table('users')->where('name', 'John');
+$secondQuery = DB::table('employees')->where('name', 'Jane');
+$users = $firstQuery->union($secondQuery)->get();
+```
+- insert()
+- update() 
+- delete()
+
+
