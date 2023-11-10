@@ -75,3 +75,8 @@ $users = $firstQuery->union($secondQuery)->get();
 - delete()
 
 
+* construct database queries using a fluent and chainable syntax.
+* particularly useful when you need to build complex or custom queries that might not fit neatly 
+* used when you need to create dynamic queries, perform raw SQL operations, or work with tables that don't have corresponding Eloquent models
+* Query Builder is used when you need to construct custom or complex SQL queries with greater control. 
+___________________________________________________________________
