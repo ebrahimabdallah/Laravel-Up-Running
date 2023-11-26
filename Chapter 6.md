@@ -1,6 +1,5 @@
 # Chapter 6. Frontend Components
-______________________________________
-
+ 
 # Breeze && Jetstream
 * are used for authentication scaffolding in Laravel
 * Breeze is more minimal and straightforward 
