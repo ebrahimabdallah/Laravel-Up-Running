@@ -43,10 +43,24 @@ public function checkToken()
          return response()->json(['message' => 'Invalid token'], 401);
     }
 }
+
+```
+* Delete Token When Logout
+```
+public function logout(Request $request)
+    {  
+        $request->user()->tokens()->delete();
+
+        return [
+            'message' => 'Logged out'
+        ];
+    }
+```
 * LOOK 
 
 ![to](https://github.com/ebrahimabdallah/Laravel-Up-Running/assets/119238955/bcba622a-b03b-4dcc-95bc-d97202d0231b)
-```
+
+
 * Sanctum tokens never expire and may only be invalidated by revoking the token. However, if you would like to configure an expiration time for your application's API tokens,
 
 * 'expiration' => 525600,
