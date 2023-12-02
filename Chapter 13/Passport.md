@@ -55,3 +55,41 @@ php artisan passport:client --personal
 * Two are traditional OAuth 2.0 grants (the password grant and authorization code grant)
 * two are convenience methods that are unique to Passport (the personal token and synchronizer token)
 
+# Passport scopes
+* used to define the specific actions or permissions that a token can have.
+
+* in app/Providers/AuthServiceProvider.php
+```
+use Laravel\Passport\Passport;
+
+class AuthServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        Passport::routes();
+
+        Passport::tokensCan([
+            'read_data' => 'Read data',
+            'write_data' => 'Write data',
+         ]);
+    }
+}
+
+```
+* Assign Scopes to Clients
+```
+php artisan passport:client --scopes=read_data,write_data
+```
+* ROUTE
+```
+Route::middleware(['auth:api', 'scope:read_data'])->get('/read-data', 'YourController@readData');
+
+```
+* Check in Controller
+```
+public function readData(Request $request)
+    {
+        $this->authorize('scope', 'read_data');
+
+     }
+```
