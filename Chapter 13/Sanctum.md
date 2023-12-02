@@ -56,7 +56,7 @@ public function logout(Request $request)
         ];
     }
 ```
-* LOOK 
+* LOOK When Invaild Token
 
 ![to](https://github.com/ebrahimabdallah/Laravel-Up-Running/assets/119238955/bcba622a-b03b-4dcc-95bc-d97202d0231b)
 
