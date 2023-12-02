@@ -1,7 +1,7 @@
 # Passport
 * Laravel Passport is a full OAuth2 server implementation; it provides a convenient way to build a full authentication system for your Laravel application
-* Why ?
-*  because APIs are stateless, we can’t rely on the same session-based authentication that we do in normal
+* he simplest concept OAuth
+*   APIs are stateless, we can’t rely on the same session-based authentication that we do in normal
 * To install
 ```
 composer require laravel/passport
