@@ -93,3 +93,5 @@ public function readData(Request $request)
 
      }
 ```
+![1_tmJvATp4uFZk2ehlX1exAQ](https://github.com/ebrahimabdallah/Laravel-Up-Running/assets/119238955/596bd064-23a9-4947-a16f-67fec061a79f)
+
