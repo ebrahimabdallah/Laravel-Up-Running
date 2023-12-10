@@ -57,3 +57,10 @@ auth()->logoutOtherDevices($password);
 ```
 Auth::routes(['verify' => true]);
 ```
+# Guards
+* defines how users are authenticated for each request
+* two pieces : a driver that defines how it persists and retrieves the authentication state (session)
+* provider : that allows you to get a user by certain criteria (users)
+* you’d change providers if you wanted to change the storage type or retrieval methods for your users
+* most laravel apps just use one guard
+* 
