@@ -135,6 +135,79 @@ Returns the path for the app directory
 If a route has a name, returns the URL for that route
 
 
+* url()->current();
+
+* url()->full();
+
+* url()->previous();
+
+* auth()
+Returns an instance of the Laravel authenticator
+
+```
+
+if (auth()->check()) {
+ // Do something
+}
+
+```
+
+* back()Generates a “redirect back” response
+
+* The dump() function is used to output the contents of a variable or expression to the browser's console or standard output 
+
+* dd($variable...):- The dd() function stands for "Dump and Die." It does the same thing as dump()
+
+* Both dump() and dd() are handy tools for debugging and understanding the flow of your application, especially during development. 
+
+* old($key = null, $default = null) Returns the old value (from the last user form submission) for this form key
+
+* redirect($path) Returns a redirect response to the given path
+
+* fake():- Returns an instance of Faker
+
+* chunk() makes it easy to split your collection into groups of a predefined size 
+
+```
+$users = collect([...]);
+$rowsOfUsers = $users->chunk(3); // Separates into groups of 3
+
+```
+
+* take() pulls just the provided number of items
+```
+$topThree = $users->take(3); // Pulls the first 3
+```
+
+
+* skip() returns a new collection without the given number of
+items
+
+
+```
+$numbers = collect([1, 2, 3, 4, 5]);
+$numbers->skip(3)->values(); // [4, 5]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
