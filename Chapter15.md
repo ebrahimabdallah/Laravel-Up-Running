@@ -164,16 +164,20 @@ Thanks,<br>
 
 
 * Mailtrap is a service for capturing and inspecting emails in development
-environments. You send your mail to the Mailtrap servers via SMTP, but
-instead of sending those emails off to the intended recipients, Mailtrap
-captures them all and provides you with a web-based email client for inspecting them, regardless of which email address is in the to field
-
-```
-
-```
+environments
  
 
+```
+MAIL_MAILER=smtp
+MAIL_HOST=mailpit
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
 
+```
 
 
 
