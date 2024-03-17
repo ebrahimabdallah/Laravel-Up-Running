@@ -1,7 +1,7 @@
  
 # Chapter 17. Helpers and Collections
 
-Arr::pluck($array, $value, $key = null)
+* Arr::pluck($array, $value, $key = null)
 Returns an array of the values corresponding to the provided key
 
 Ex:
