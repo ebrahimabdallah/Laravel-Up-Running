@@ -1,5 +1,4 @@
- # Glossary
-
+ 
  * **accessor** :- A method defined on an Eloquent model that customizes how a given property will be returned
 enable you to modify the data fetched from the database before it's accessed by your application's code
 * Ex:-
