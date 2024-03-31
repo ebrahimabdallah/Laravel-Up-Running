@@ -70,4 +70,134 @@ AWS
 * **Fortify** Laravel package designed to provide a simple and customizable authentication system for Laravel applications.
 
 
+ 
+* **FQCN** helps Laravel locate and autoload classes without ambiguity, especially when dealing with classes that have the same name but exist in different namespaces
+
+
+* **helper** A globally accessible PHP function
+
+* **Homestead** pre-packaged Vagrant box for Laravel development. It's designed to provide a development environment that closely mirrors production environments, making it easier to develop Laravel applications locally.
+
+
+* **Horizon** A Laravel package that provides tooling for managing queues
+with greater nuance than Laravel’s defaults,
+
+* **integration test** :- Integration tests test the way individual units work together and pass messages.
+
+* **Inversion of Control (IoC)** is a design principle that promotes decoupling of components within the application. Laravel's IoC container is a powerful tool that manages class dependencies and performs dependency injection.
+
+```
+// Binding a concrete class to an interface
+$this->app->bind(InterfaceName::class, ConcreteImplementation::class);
+
+```
+
+* **job**
+A class that intends to encapsulate a single task.
+
+* **JSON** (JavaScript Object Notation) A syntax for data representation
+
+* **JWT** authentication provides a stateless and scalable authentication mechanism for your Laravel application. By using JWT, you can securely authenticate users and exchange information between client and server in a standardized format
+
+* **mailable** An architectural pattern designed to encompass the functionality
+of sending mail into a single “sendable” class
+
+
+* **Markdown** A formatting language designed for formatting plain text and
+outputting to multiple formats
+
+
+* **mass assignment** The ability to pass many parameters at once to create or update
+an Eloquent model
+
+* **Memcached** An in-memory data store designed to provide simple but fast
+data storage
+
+
+* **middleware**
+A series of wrappers around an application that filter and decorate its inputs and outputs.
+
+
+* **Mockery**
+A library included with Laravel that makes it easy to mock PHP
+classes in your tests
+
+
+* **mutator**
+A tool in Eloquent that allows you to manipulate the data being
+saved to a model property before it is saved to the database.
+
+* **Nginx**
+A web server similar to Apache.
+
+
+* **notification**
+A Laravel framework tool allowing a single message to be sent
+via myriad notification channels
+
+* **Nova**
+A paid Laravel package for building admin panels for your Laravel apps.
+
+
+* **NPM** (Node Package Manager)
+A central web-based repository for Node packages
+
+* **OAuth**
+The most common authentication framework for APIs
+
+* **ORM** (object-relational mapper)
+A design pattern that is centered around using objects in a programming language to represent data, and its relationships, in a
+relational database
+
+* **PHPSpec**
+A PHP testing framework.
+
+
+* **preprocessor**
+A build tool that takes in a special form of a language
+
+
+* **Redis**
+Like Memcached, a data store simpler than most relational databases but powerful and fast. Redis supports a very limited set of
+structures and data types
+
+
+* **S3** (Simple Storage Service)
+Amazon’s “object storage” service
+
+
+* **SaaS** (Software as a Service)
+Web-based applications that you pay money to use.
+
+
+* **Sanctum**
+API token authentication system for single-page applications,
+mobile applications, and simple token-based APIs
+
+
+* **scope**
+In Eloquent, a tool for defining how to consistently and simply
+narrow down a query
+
+* **Scout**
+A Laravel package for full-text search on Eloquent models
+
+
+* **serialization**
+The process of converting more complex data
+
+* **Socialite**
+A Laravel package making it simple to add social authentication
+
+* **soft delete**
+Marking a database row as “deleted” without actually deleting it
+
+
+* **Spark**
+A Laravel tool that makes it easy to spin up a new subscriptionbased Saa
+
+
+* **Telescope
+A Laravel package for adding a debugging assistant to Laravel
+apps
 
