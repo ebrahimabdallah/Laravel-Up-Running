@@ -9,7 +9,8 @@
 # glimpse testing laravel 
 * https://www.youtube.com/watch?v=8pps7mPoKzE&list=PLf5ATZslqO1fy0pYJBM485btBMwpEdU0H
 
-  # regex laravel
+# regex laravel
   * in general
   * https://www.youtube.com/watch?v=rhzKDrUiJVk
+  * Validation laravel regex
   * https://www.youtube.com/watch?v=1nKkoHGCWC4
