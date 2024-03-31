@@ -200,3 +200,26 @@ A Laravel tool that makes it easy to spin up a new subscriptionbased Saa
 A Laravel package for adding a debugging assistant to Laravel
 apps
 
+
+
+# Summary 
+
+* The Laravel Ecosystem
+* Laravel Vapor - a serverless deployment platform powered by AWS
+* Laravel Forge - server management for deployment and configuration
+* Laravel Envoyer - zero downtime PHP deployment system
+* Laravel Horizon - queue monitoring
+* Laravel Nova - administration panel
+* Laravel Echo - broadcasting, real-time events
+* Laravel Lumen - fast micro-framework
+* Laravel Sail - local Docker development environment
+* Laravel Jetstream - An application starter kit for Laravel/ App scaffolding
+* Laravel Valet - development environment for macOS minimalists
+* Laravel Cashier (Stripe) - subscription billing integration
+* Laravel Dusk - browser testing and automation
+* Laravel Sanctum - API/Mobile authentication
+* Laravel Scout - full-text search
+* Laravel Socialite - QAuth Authentication
+* Laravel Telescope - Debug Assistant
+* Laravel Spark - recurring billing solution
+* Laravel Mix (Compiling Assets) - Webpack assets compilation developed
