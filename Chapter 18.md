@@ -194,10 +194,10 @@ Marking a database row as “deleted” without actually deleting it
 
 
 * **Spark**
-A Laravel tool that makes it easy to spin up a new subscriptionbased Saa
+A Laravel tool that makes it easy to spin up a new subscriptionbased Saa
 
 
-* **Telescope
+* **Telescope**
 A Laravel package for adding a debugging assistant to Laravel
 apps
 
