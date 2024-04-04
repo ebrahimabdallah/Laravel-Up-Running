@@ -100,6 +100,130 @@ given content type
 
 
 
+* JSON responses
+  common way to send structured data back to the client in response to an HTTP request. Here's a summary of how JSON responses are handled in Laravel
+```
+return response()->json(Model::all());
+```
+* **persistence** refers to the process of storing and retrieving data in a database, ensuring that the data remains available even after the application is shut down or restarted. Laravel provides several tools and techniques for working with databases and ensuring data persistence
+
+* flash()
+Flashes the current request’s user input to the session
+
+* flashOnly()
+Flashes the current request’s user input for any keys in the provided array.
+
+
+* flashExcept()
+Flashes the current request’s user input, except for any keys in the
+provided array.
+
+* old()
+Returns an array of all previously flashed user input 
+
+* flush()
+Wipes all previously flashed user input.
+
+* cookie()
+Retrieves all cookies from the request 
+
+* hasCookie()
+Returns a Boolean indicating whether the request has a cookie for the given key
+
+
+
+# Middleware 
+- acts as a bridge between the incoming HTTP request and your application's logic. It provides a way to filter and modify requests and responses in a flexible and centralized manner.
+
+* Creating Custom Middleware
+
+You can create custom middleware in Laravel by implementing the handle method in a middleware class. This method receives the request, performs any necessary processing, and optionally passes the request to the next middleware in the stack.
+
+* Global Middleware:
+
+Global middleware applies to all HTTP requests handled by your application. These are registered in the $middleware property of the App\Http\Kernel class.
+Global middleware is suitable for tasks that need to be performed on every request, such as logging or setting headers.
+
+
+* Using middleware groups
+Middleware groups are essentially prepackaged bundles of middleware
+that make sense to be together in specific contexts
+
+
+* Middleware Parameters:
+
+Middleware can accept parameters, allowing you to customize their behavior based on specific conditions or configurations.
+
+```
+public function handle(Request $request, Closure $next, $role): Response
+{
+ if (auth()->check() && auth()->user()->hasRole($role)) {
+ return $next($request);
+ }
+ return redirect('login');
+}
+```
+
+* rate limiting middleware
+- allows you to control the rate at which clients can access certain routes or endpoints within your application
+
+
+```
+php artisan make:middleware RateLimitMiddleware
+
+```
+```
+class RateLimitMiddleware
+{
+    public function handle($request, Closure $next)
+    {
+        $ip = $request->ip();
+        $key = "rate_limit:$ip";
+
+        $limit = 100; // Example: allow 100 requests per hour
+        $interval = 3600; // 1 hour in seconds
+
+        $requests = Redis::get($key) ?: 0;
+
+        if ($requests >= $limit) {
+            return response()->json(['message' => 'Too many requests'], 429);
+        }
+
+        Redis::incr($key);
+        Redis::expire($key, $interval);
+
+        return $next($request);
+    }
+}
+```
+
+```
+Route::middleware('rate.limit')->get('/example', function () {
+    return response()->json(['message' => 'This route is rate-limited']);
+});
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
