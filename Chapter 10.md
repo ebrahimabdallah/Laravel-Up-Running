@@ -204,6 +204,8 @@ Route::middleware('rate.limit')->get('/example', function () {
 
 ```
 
+* **CORS** (Cross-Origin Resource Sharing)
+- is a security feature implemented by web browsers to restrict web pages from making requests to domains that are different from the one serving the web page. However, there are legitimate use cases where you might want to allow such cross-origin requests, such as when building a web API that needs to be accessed by clients from different domains.
 
 
 
